@@ -1,0 +1,6 @@
+.env
+selectColumnsDataFrame/.env.development
+
+TesteConnectDB/database.ini
+
+__pycache__
