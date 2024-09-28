@@ -1,6 +1,5 @@
 .env
-selectColumnsDataFrame/.env.development
+.env.development
 ConnectDB/database.ini
 __pycache__
-mergeDataFrames/.env
 .venv
