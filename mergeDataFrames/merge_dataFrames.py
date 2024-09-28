@@ -1,7 +1,7 @@
 import os
-import psycopg2
-import pandas as pd
-from dotenv import load_dotenv
+import psycopg2 # type: ignore
+import pandas as pd # type: ignore
+from dotenv import load_dotenv # type: ignore
 
 
 # 1. Carregar variáveis ​​de ambiente do arquivo .env
@@ -26,23 +26,23 @@ conn = psycopg2.connect(
 )
 
 # Step 2: Run the first SELECT query to get orders data
-orders_query = "SELECT order_id, customer_ref, order_amount FROM orders"
-orders_df = pd.read_sql(orders_query, conn)
+cnt_query = "SELECT * FROM cnt LIMIT 10"
+cnt_df = pd.read_sql(cnt_query, conn)
 
 # Step 3: Run the second SELECT query to get customer information
-customers_query = "SELECT customer_id, customer_name, location FROM customer_info"
-customers_df = pd.read_sql(customers_query, conn)
+cntfis_query = "SELECT customer_id, customer_name, location FROM cntfis WHERE = %s"
+cntfis_df = pd.read_sql(cntfis_query, conn)
 
 # Step 4: Fecho a conexão com o banco de dados
 conn.close()
 
 # Step 5: Merge the two DataFrames on the common ID
-# Note: 'customer_ref' from the orders_df and 'customer_id' from the customers_df
-combined_df = pd.merge(orders_df, customers_df, left_on='customer_ref', right_on='customer_id', how='inner')
+# Note: 'cntfis_df' from the cnt_df and 'cntid' from the cntfiscnt
+combined_df = pd.merge(cnt_df, cntfis_df, left_on='cntfiscnt', right_on='cntid', how='inner')
 
 # Step 6: Select specific columns from the combined DataFrame
-# Example: Select 'customer_name' and 'order_amount'
-filtered_df = combined_df[['customer_name', 'order_amount']]
+# Example: Select 'cntnom' and 'cntfismae'
+filtered_df = combined_df[['cntnom', 'order_amount']]
 
 # Step 7: Display the filtered DataFrame
 print(filtered_df)

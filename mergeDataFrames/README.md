@@ -13,9 +13,10 @@ Use o gerenciador de pacotes [pip](https://pip.pypa.io/en/stable/), para realiza
 - pandas
 - pyarrow
 - psycopg2
+- python-dotenv
 
 ```bash
-pip install psycopg2 pyarrow pandas
+pip install psycopg2 pyarrow pandas python-dotenv
 ```
 
 ## Como fazer o Merge
