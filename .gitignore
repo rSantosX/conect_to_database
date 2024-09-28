@@ -3,3 +3,4 @@
 ConnectDB/database.ini
 __pycache__
 .venv
+csv
