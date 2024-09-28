@@ -1,8 +1,8 @@
 import os
-import psycopg2
-import pandas as pd
-import pyarrow as pa
-from dotenv import load_dotenv
+import psycopg2 # type: ignore
+import pandas as pd # type: ignore
+import pyarrow as pa # type: ignore
+from dotenv import load_dotenv # type: ignore
 
 
 # 1. Carregar variáveis ​​de ambiente do arquivo .env

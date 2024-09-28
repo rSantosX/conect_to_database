@@ -2,4 +2,5 @@
 selectColumnsDataFrame/.env.development
 TesteConnectDB/database.ini
 __pycache__
-.venv/
+mergeDataFrames/.env
+.venv
