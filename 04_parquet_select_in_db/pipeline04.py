@@ -1,5 +1,8 @@
-import pandas as pd
-import psycopg2  # Replace with your database connector (e.g., sqlite3 for SQLite)
+import os
+import warnings
+import psycopg2 # type: ignore
+import pandas as pd # type: ignore
+from dotenv import load_dotenv # type: ignore
 
 # Step 1: Read data from the .parquet file
 parquet_df = pd.read_parquet("customers.parquet")  # Replace with your .parquet file path

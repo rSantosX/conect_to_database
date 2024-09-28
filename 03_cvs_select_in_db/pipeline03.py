@@ -1,4 +1,8 @@
-import pandas as pd
+import os
+import warnings
+import psycopg2 # type: ignore
+import pandas as pd # type: ignore
+from dotenv import load_dotenv # type: ignore
 import sqlite3  # Replace with your database connector (e.g., psycopg2 for PostgreSQL)
 
 # Step 1: Read data from the CSV file
