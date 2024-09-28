@@ -36,7 +36,7 @@ query = f"SELECT * FROM receita_cnpj.recpjcns WHERE recpjcnscnpj IN ({placeholde
 
 
 # Step 5: Use `tuple` to pass the list of IDs as parameters
-orders_df = pd.read_sql_query(query, conn, params=list(customer_docs))  # Pass `customer_ids` as a tuple
+orders_df = pd.read_sql_query(query, conn, params=tuple(customer_docs))  # Pass `customer_docs` as a tuple/list
 
     # Step 6: Output the resulting DataFrame
 print(orders_df)
